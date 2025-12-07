@@ -15,6 +15,7 @@
 -->
 
 <resources>
+    <string name="timestamp_format">yyyy-MM-dd HH:mm</string>
     <string name="app_name">NotePad</string>
     <string name="live_folder_name">Notes</string>
 

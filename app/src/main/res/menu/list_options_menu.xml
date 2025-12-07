@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--  This is our one standard application action (creating a new note). -->
-    <item android:id="@+id/menu_add"
-          android:icon="@drawable/ic_menu_compose"
-          android:title="@string/menu_add"
-          android:alphabeticShortcut='a'
-          android:showAsAction="always" />
-    <!--  If there is currently data in the clipboard, this adds a PASTE menu item to the menu
-          so that the user can paste in the data.. -->
-    <item android:id="@+id/menu_paste"
-          android:icon="@drawable/ic_menu_compose"
-          android:title="@string/menu_paste"
-          android:alphabeticShortcut='p' />
+
+    <!-- 搜索功能 -->
+    <item
+        android:id="@+id/menu_search"
+        android:title="Search"
+        android:icon="@android:drawable/ic_menu_search"
+    android:showAsAction="ifRoom|collapseActionView"/>
+
+    <!-- 新建笔记 -->
+    <item
+        android:id="@+id/menu_add"
+        android:title="New note"
+        android:icon="@android:drawable/ic_menu_add"
+    android:showAsAction="always"/>
+
+    <!-- 粘贴功能（移除私有图标） -->
+    <item
+        android:id="@+id/menu_paste"
+        android:title="Paste"
+        android:icon="@android:drawable/ic_menu_edit"
+    android:showAsAction="never"/>
+
+    <!-- 删除功能 -->
+    <item
+        android:id="@+id/menu_delete"
+        android:title="Delete"
+        android:icon="@android:drawable/ic_menu_delete"
+    android:showAsAction="ifRoom"/>
+
+    <!-- 排序菜单 -->
+    <item
+        android:id="@+id/menu_sort"
+        android:title="Sort"
+        android:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/menu_sort_time_new"
+                android:title="By Time (Newest)"/>
+            <item
+                android:id="@+id/menu_sort_time_old"
+                android:title="By Time (Oldest)"/>
+        </menu>
+    </item>
 </menu>

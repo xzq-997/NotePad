@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_options">
+        <item>By Time (Newest)</item>
+        <item>By Time (Oldest)</item>
+        <item>By Title (A-Z)</item>
+        <item>By Title (Z-A)</item>
+        <item>By Color</item>
+    </string-array>
+
+    <string-array name="color_options">
+        <item>All Colors</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Purple</item>
+        <item>Gray</item>
+    </string-array>
+</resources>

@@ -1,28 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-  
-          http://www.apache.org/licenses/LICENSE-2.0
-  
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
-<view xmlns:android="http://schemas.android.com/apk/res/android"
-    class="com.example.android.notepad.NoteEditor$LinedEditText"
-    android:id="@+id/note"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    android:padding="5dp"
-    android:scrollbars="vertical"
-    android:fadingEdge="vertical"
-    android:gravity="top"
-    android:textSize="22sp"
-    android:capitalize="sentences"
-/>
+    android:orientation="vertical"
+    android:background="#E8F5E9"> <!-- 使用图片3的浅绿色背景 -->
+
+    <!-- 标题栏（绿色，参考图片2） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="#4CAF50"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:elevation="4dp">
+
+    <!-- 返回按钮（完善功能） -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:contentDescription="Back"
+        android:tint="#FFFFFF"/>
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Edit Note"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <!-- 保存按钮（软盘图标，参考图片3） -->
+    <ImageButton
+        android:id="@+id/btn_save"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_save"
+        android:contentDescription="Save"
+        android:tint="#FFFFFF"/>
+
+    <!-- 删除按钮（移除图片3的图标，只保留必要功能） -->
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_delete"
+        android:contentDescription="Delete"
+        android:tint="#FFFFFF"
+        android:visibility="gone"/> <!-- 默认隐藏，编辑已有笔记时显示 -->
+</LinearLayout>
+
+    <!-- 标题输入区 -->
+<EditText
+android:id="@+id/title"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Title"
+android:background="#FFFFFF"
+android:padding="16dp"
+android:textSize="20sp"
+android:textStyle="bold"
+android:maxLines="1"
+android:inputType="textCapSentences"/>
+
+    <!-- 分隔线 -->
+<View
+android:layout_width="match_parent"
+android:layout_height="1dp"
+android:background="#E0E0E0"/>
+
+    <!-- 内容编辑区 -->
+<EditText
+android:id="@+id/note"
+android:layout_width="match_parent"
+android:layout_height="0dp"
+android:layout_weight="1"
+android:hint="Start typing..."
+android:background="#FFFFFF"
+android:padding="16dp"
+android:textSize="16sp"
+android:gravity="top"
+android:inputType="textMultiLine|textCapSentences"
+android:lineSpacingMultiplier="1.2"
+android:maxLength="5000"/>
+
+    <!-- 底部工具栏 -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:background="#FFFFFF"
+android:padding="8dp">
+
+<!-- 颜色标记按钮（参考图片3，可选功能） -->
+<ImageButton
+    android:id="@+id/btn_color_mark"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:background="?android:attr/selectableItemBackgroundBorderless"
+    android:src="@android:drawable/ic_menu_gallery"
+    android:contentDescription="Color mark"
+    android:tint="#4CAF50"/>
+
+<!-- 日期时间显示 -->
+<TextView
+    android:id="@+id/text_datetime"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:textSize="12sp"
+    android:textColor="#757575"
+    android:padding="8dp"/>
+
+<!-- 字数统计 -->
+<TextView
+    android:id="@+id/text_wordcount"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="12sp"
+    android:textColor="#757575"
+    android:padding="8dp"/>
+</LinearLayout>
+    </LinearLayout>
